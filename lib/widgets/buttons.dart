@@ -6,7 +6,7 @@ class Buttons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(Text('Buttons')),
+      appBar: AppBar(title: Text('Buttons')),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
