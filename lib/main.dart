@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widgets/alert.dart';
+import 'package:flutter_application_1/widgets/bottomsheet.dart';
 import 'package:flutter_application_1/widgets/dismissible.dart';
 import 'package:flutter_application_1/widgets/drawer.dart';
 import 'package:flutter_application_1/widgets/image.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false, //this remove the debug text
       theme: ThemeData(
           brightness: Brightness.dark, primaryColor: Colors.deepOrangeAccent),
-      home: AlertWidget(),
+      home: BottomWidget(),
     );
   }
 }
