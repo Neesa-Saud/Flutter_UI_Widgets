@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widgets/dismissible.dart';
+import 'package:flutter_application_1/widgets/drawer.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false, //this remove the debug text
       theme: ThemeData(
           brightness: Brightness.dark, primaryColor: Colors.deepOrangeAccent),
-      home: Dismi(),
+      home: DrawerWidget(),
     );
   }
 }

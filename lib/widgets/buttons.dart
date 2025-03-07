@@ -16,8 +16,7 @@ class Buttons extends StatelessWidget {
               style: ButtonStyle(
                   backgroundColor:
                       MaterialStateProperty.all(Colors.deepOrangeAccent)),
-              overlayColor: MaterialStateProperty.all(Colors
-                  .brown)), //(onpresses,child)these two are most required things in textButton
+              overlayColor: MaterialStateProperty.all(Colors.brown)), //(onpresses,child)these two are most required things in textButton
           SizedBox(
               height: 20), //used sizeBox to add some space betwwen two buttons
           Column(
