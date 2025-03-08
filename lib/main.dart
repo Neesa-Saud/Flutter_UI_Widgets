@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets/animatedtext.dart';
+import 'package:flutter_application_1/widgets/bottomnav2.dart';
 import 'package:flutter_application_1/widgets/bottomsheet.dart';
 
 void main() => runApp(MyApp());
@@ -11,8 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false, //this remove the debug text
       theme: ThemeData(
-          brightness: Brightness.dark, primaryColor: Colors.deepOrangeAccent),
-      home: BottomWidget(),
+          brightness: Brightness.light, primaryColor: Colors.deepOrangeAccent),
+      home: BottomWidget2(),
     );
   }
 }
