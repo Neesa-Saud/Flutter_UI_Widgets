@@ -3,6 +3,7 @@ import 'package:flutter_application_1/widgets/animatedtext.dart';
 import 'package:flutter_application_1/widgets/bottomnav2.dart';
 import 'package:flutter_application_1/widgets/bottomsheet.dart';
 import 'package:flutter_application_1/widgets/form.dart';
+import 'package:flutter_application_1/widgets/imagepicker.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false, //this remove the debug text
       theme: ThemeData(
           brightness: Brightness.light, primaryColor: Colors.deepOrangeAccent),
-      home: FormWidget(),
+      home: ImagePickerWidget(),
     );
   }
 }
