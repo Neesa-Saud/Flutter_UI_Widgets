@@ -1,4 +1,3 @@
-//For single image
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io'; // important while we are converting Xfile type into file type
@@ -14,6 +13,7 @@ class ImagePickerWidget extends StatefulWidget {
 class _ImagePickerWidgetState extends State<ImagePickerWidget> {
   ImagePicker _picker = ImagePicker();
   XFile? file; //XFile is a class in image_picker package for cross platform
+  List<XFile>? files;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +39,7 @@ class _ImagePickerWidgetState extends State<ImagePickerWidget> {
                       ),
               )), //here we converted Xfile type into file type
           ElevatedButton(
+            // for single image
             onPressed: () async {
               final XFile? photo =
                   await _picker.pickImage(source: ImageSource.gallery);
@@ -48,6 +49,20 @@ class _ImagePickerWidgetState extends State<ImagePickerWidget> {
               print('Image Picked');
             },
             child: Text('Pick Image'),
+          ),
+          ElevatedButton(
+            // for multiple image
+            onPressed: () async {
+              final List<XFile>? photos = await _picker.pickMultiImage();
+              setState(() {
+                files = photos;
+              });
+              print('Images Picked');
+              for (int i = 0; i < files!.length; i++) {
+                print(files![i].path);
+              }
+            },
+            child: Text('Pick Images'),
           )
         ])));
   }
