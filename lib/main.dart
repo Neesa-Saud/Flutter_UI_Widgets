@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widgets/animatedtext.dart';
-import 'package:flutter_application_1/widgets/bottomnav2.dart';
-import 'package:flutter_application_1/widgets/bottomsheet.dart';
-import 'package:flutter_application_1/widgets/form.dart';
 import 'package:flutter_application_1/widgets/imagepicker.dart';
 
 void main() => runApp(MyApp());
