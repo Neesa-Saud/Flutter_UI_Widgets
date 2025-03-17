@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 // have to add firebase core in pubspec.ymal
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized(); //
   await Firebase.initializeApp();
   runApp(MyApp());
 }
