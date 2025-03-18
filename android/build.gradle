@@ -6,6 +6,8 @@ allprojects {
 }
 plugins {
   // ...
+  apply plugin: 'com.google.gms.google-services'
+
 
   // Add the dependency for the Google services Gradle plugin
   id("com.google.gms.google-services") version "4.4.2" apply false
@@ -22,6 +24,7 @@ plugins {
 dependencies {
   // Import the Firebase BoM
   implementation(platform("com.google.firebase:firebase-bom:33.10.0"))
+   classpath 'com.google.gms:google-services:4.3.10'
 
 
   // TODO: Add the dependencies for Firebase products you want to use

@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/functions/auth_function.dart';
 
-class LogInPage extends StatefulWidget {
-  const LogInPage({super.key});
+class Day24Authentication extends StatefulWidget {
+  const Day24Authentication({Key? key}) : super(key: key);
 
   @override
-  State<LogInPage> createState() => _LogInPageState();
+  _Day24AuthenticationState createState() => _Day24AuthenticationState();
 }
 
-class _LogInPageState extends State<LogInPage> {
+class _Day24AuthenticationState extends State<Day24Authentication> {
   final _formkey = GlobalKey<FormState>();
   bool isLogin = false;
-  String email = "";
-  String password = "";
-  String username = "";
+  String email = '';
+  String password = '';
+  String username = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(' Email/password Authentication'),
+        title: Text('Email/Pass Auth'),
       ),
       body: Form(
         key: _formkey,
@@ -29,11 +29,11 @@ class _LogInPageState extends State<LogInPage> {
             children: [
               !isLogin
                   ? TextFormField(
-                      key: ValueKey('user name'),
-                      decoration: InputDecoration(hintText: "Enter user name"),
+                      key: ValueKey('username'),
+                      decoration: InputDecoration(hintText: "Enter Username"),
                       validator: (value) {
                         if (value.toString().length < 3) {
-                          return 'Username is too small';
+                          return 'Username is so small';
                         } else {
                           return null;
                         }
@@ -47,10 +47,10 @@ class _LogInPageState extends State<LogInPage> {
                   : Container(),
               TextFormField(
                 key: ValueKey('email'),
-                decoration: InputDecoration(hintText: "Enter email"),
+                decoration: InputDecoration(hintText: "Enter Email"),
                 validator: (value) {
                   if (!(value.toString().contains('@'))) {
-                    return 'invalid email';
+                    return 'Invalid Email';
                   } else {
                     return null;
                   }
@@ -64,10 +64,10 @@ class _LogInPageState extends State<LogInPage> {
               TextFormField(
                 obscureText: true,
                 key: ValueKey('password'),
-                decoration: InputDecoration(hintText: "Enter password "),
+                decoration: InputDecoration(hintText: "Enter Password"),
                 validator: (value) {
                   if (value.toString().length < 6) {
-                    return 'Password is too small';
+                    return 'Password is so small';
                   } else {
                     return null;
                   }
@@ -87,10 +87,10 @@ class _LogInPageState extends State<LogInPage> {
                   child: ElevatedButton(
                       onPressed: () {
                         if (_formkey.currentState!.validate()) {
-                          //must have null check
-                          _formkey.currentState!
-                              .save(); // before signup call , must check validatetion and save
-                          signup(email, password);
+                          _formkey.currentState!.save();
+                          isLogin
+                              ? signin(email, password)
+                              : signup(email, password);
                         }
                       },
                       child: isLogin ? Text('Login') : Text('Signup'))),
@@ -105,7 +105,7 @@ class _LogInPageState extends State<LogInPage> {
                   },
                   child: isLogin
                       ? Text("Don't have an account? Signup")
-                      : Text('Already Signed up? Login'))
+                      : Text('Already Signed Up? Login'))
             ],
           ),
         ),

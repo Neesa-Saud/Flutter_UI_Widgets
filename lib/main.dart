@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widgets/location.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_application_1/widgets/login.dart';
 
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false, //this remove the debug text
       theme: ThemeData(
           brightness: Brightness.light, primaryColor: Colors.deepOrangeAccent),
-      home: LogInPage(),
+      home: Day24Authentication(),
     );
   }
 }
