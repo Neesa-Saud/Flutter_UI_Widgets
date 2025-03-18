@@ -19,6 +19,7 @@ class _Day24AuthenticationState extends State<Day24Authentication> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Email/Pass Auth'),
+        backgroundColor: Colors.blue,
       ),
       body: Form(
         key: _formkey,
