@@ -1,11 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_application_1/widgets/database.dart';
 import 'package:flutter_application_1/widgets/login.dart';
+import 'firebase_options.dart';
 
 // have to add firebase core in pubspec.ymal
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); //
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
@@ -18,7 +23,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false, //this remove the debug text
       theme: ThemeData(
           brightness: Brightness.light, primaryColor: Colors.deepOrangeAccent),
-      home: Day24Authentication(),
+      home: StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return DatabaseTime();
+          } else {
+            return Day24Authentication();
+          }
+        },
+      ),
     );
   }
 }
