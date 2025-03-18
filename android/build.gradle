@@ -4,24 +4,8 @@ allprojects {
         mavenCentral()
     }
 }
-plugins {
-  // ...
-  apply plugin: 'com.google.gms.google-services'
-
-
-  // Add the dependency for the Google services Gradle plugin
-  id("com.google.gms.google-services") version "4.4.2" apply false
-
-}
-plugins {
-  id("com.android.application")
-
-  // Add the Google services Gradle plugin
-  id("com.google.gms.google-services")
-
-  ...
-}
 dependencies {
+  id("com.google.gms.google-services") version "4.4.2" apply false
   // Import the Firebase BoM
   implementation(platform("com.google.firebase:firebase-bom:33.10.0"))
    classpath 'com.google.gms:google-services:4.3.10'
