@@ -16,3 +16,8 @@ Update(String collName, docName, field, var newFieldValue) async {
   print(
       'Fields updated'); //it will update the some value that we want to change after creating
 }
+
+delete(String collName, docName) async {
+  await FirebaseFirestore.instance.collection(collName).doc(docName).delete();
+  print('document deleted');
+}
