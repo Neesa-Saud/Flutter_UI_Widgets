@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-Create() async {
+Create(String collName, docName, name, animal, int age) async {
   await FirebaseFirestore.instance
-      .collection('pets')
-      .doc('tom')
-      .set({'name': 'Tom', 'animal': 'Dog', 'age': 12});
-  print('Database Update');
+      .collection(collName)
+      .doc(docName)
+      .set({'name': name, 'animal': animal, 'age': age});
+  print('Database Updated');
 }

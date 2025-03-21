@@ -31,7 +31,7 @@ class _DatabaseTimeState extends State<DatabaseTime> {
             children: [
               ElevatedButton(
                   onPressed: () {
-                    Create();
+                    Create('pets', 'kitty', 'jerry', 'cat', 5);
                   },
                   child: Text('Create')),
               ElevatedButton(onPressed: () {}, child: Text('Update')),
