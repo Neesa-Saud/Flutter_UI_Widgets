@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/functions/auth_function.dart';
 
@@ -19,6 +20,13 @@ class _Day24AuthenticationState extends State<Day24Authentication> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Email/Pass Auth'),
+        actions: [
+          IconButton(
+              onPressed: () async {
+                await FirebaseAuth.instance.signOut();
+              },
+              icon: Icon(Icons.leave_bags_at_home))
+        ],
         backgroundColor: Colors.blue,
       ),
       body: Form(
