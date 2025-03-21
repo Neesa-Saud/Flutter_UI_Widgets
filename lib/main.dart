@@ -6,6 +6,7 @@ import 'package:flutter_application_1/widgets/login.dart';
 import 'firebase_options.dart';
 
 // have to add firebase core in pubspec.ymal
+//have to add plugin in pubspec.ymal so to import firebase cloud store libraries
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); //
   await Firebase.initializeApp(

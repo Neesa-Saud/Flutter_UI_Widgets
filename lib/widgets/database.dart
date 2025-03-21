@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/functions/databasefunction.dart';
 
 class DatabaseTime extends StatefulWidget {
   const DatabaseTime({super.key});
@@ -23,14 +24,21 @@ class _DatabaseTimeState extends State<DatabaseTime> {
         ],
         backgroundColor: Colors.blue,
       ),
-      body: Container(
-        child: Column(
-          children: [
-            ElevatedButton(onPressed: () {}, child: Text('Create')),
-            ElevatedButton(onPressed: () {}, child: Text('Create')),
-            ElevatedButton(onPressed: () {}, child: Text('Create')),
-            ElevatedButton(onPressed: () {}, child: Text('Create'))
-          ],
+      body: Center(
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                  onPressed: () {
+                    Create();
+                  },
+                  child: Text('Create')),
+              ElevatedButton(onPressed: () {}, child: Text('Update')),
+              ElevatedButton(onPressed: () {}, child: Text('Retrive')),
+              ElevatedButton(onPressed: () {}, child: Text('Delete'))
+            ],
+          ),
         ),
       ),
     );
