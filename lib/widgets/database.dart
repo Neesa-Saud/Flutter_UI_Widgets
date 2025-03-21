@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Pages/pets.dart';
 import 'package:flutter_application_1/functions/databasefunction.dart';
 
 class DatabaseTime extends StatefulWidget {
@@ -44,7 +45,12 @@ class _DatabaseTimeState extends State<DatabaseTime> {
                     delete('pets', 'kitty'); //will delete the kitty
                   },
                   child: Text('Retrive')),
-              ElevatedButton(onPressed: () {}, child: Text('Delete'))
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => PetdList()));
+                  },
+                  child: Text('Delete'))
             ],
           ),
         ),
