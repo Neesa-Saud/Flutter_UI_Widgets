@@ -1,2 +1,0 @@
-E:/flutter_ui_widgets/android/app/.cxx/Debug/681x4k27/x86/CMakeFiles/edit_cache.dir
-E:/flutter_ui_widgets/android/app/.cxx/Debug/681x4k27/x86/CMakeFiles/rebuild_cache.dir
